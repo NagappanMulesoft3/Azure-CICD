@@ -42,7 +42,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    goals: 'package -Dapp.name=${app.name} -s $(settings.secureFilePath) $(MAVEN_OPTS)'
+    goals: 'package -s $(settings.secureFilePath) $(MAVEN_OPTS)'
 
 - task: PublishPipelineArtifact@1
   inputs:
