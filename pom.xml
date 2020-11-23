@@ -12,11 +12,7 @@
       <app.runtime>4.3.0-20201013</app.runtime>
       <mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
    </properties>
-<distributionManagement>
-    <repository>
-        <id>Anypoint</id>
-    </repository>
-</distributionManagement>
+<distributionManagement/>
    <build>
       <plugins>
          <plugin>
