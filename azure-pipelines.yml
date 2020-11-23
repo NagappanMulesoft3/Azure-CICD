@@ -29,9 +29,17 @@ steps:
   
 - task: DownloadSecureFile@1
   displayName: Download secure file
-  name: settings
+  name: settingsxml
   inputs:
     secureFile: 'settings.xml'
+    
+- task: Powershell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      New-Item -Type Directory -Force "${HOME}/.m2"
+      Copy-Item -Force "$(settingsxml.secureFilePath)" "${HOME}/.m2/settings.xml
+
 
 - task: Maven@3
   inputs:
@@ -42,7 +50,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    goals: 'package -s $(settings.secureFilePath) $(MAVEN_OPTS)'
+    goals: 'clean install package deploy $(MAVEN_OPTS)'
 
 - task: PublishPipelineArtifact@1
   inputs:
