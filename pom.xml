@@ -12,12 +12,6 @@
       <app.runtime>4.3.0-20201013</app.runtime>
       <mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
    </properties>
-<distributionManagement>
-       <repository>
-         <id>Anypoint</id>
-         <name>Anypoint</name>
-       </repository>
-   </distributionManagement>
    <build>
       <plugins>
          <plugin>
@@ -34,7 +28,8 @@
                <cloudHubDeployment>
                   <uri>https://anypoint.mulesoft.com/</uri>
                   <muleVersion>4.3.0</muleVersion>
-                  <server>Anypoint</server>
+                  <username>nagappannaga</username>
+                  <password>Qwerty@123</password>
                   <applicationName>azure-cicd-demo</applicationName>
                   <environment>Sandbox</environment>
                   <workers>1</workers>
