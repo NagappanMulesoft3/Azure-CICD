@@ -37,4 +37,4 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dapp.password=${app.password}'
+    goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dapp.password=$(app.password)'
